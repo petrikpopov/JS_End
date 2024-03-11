@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper{
+            margin: 50px;
+            width: 50%;
+            height: 50vh;
+            border: 3px solid red;
+            position: relative;
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: green;
+            position: absolute;
+            z-index: 9999;
+        }
+
+        .dnd-target{
+            width: 30%;
+            height: 150px;
+            bottom: 0;
+            position: absolute;
+        }
+
+        .dnd-positive{
+            left: 0;
+            background-color: palevioletred;
+        }
+
+        .dnd-negative{
+            right: 0;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="">
+        <div class="circle" id="dragdrop"></div>
+        <div class="dnd-target dnd-positive"></div>
+        <div class="dnd-target dnd-negative"></div>
+    </div>
+
+    <script src="code.js"></script>
+</body>
+</html>

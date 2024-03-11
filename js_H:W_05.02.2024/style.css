@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid red;
+    width: 300px;
+    margin: 80px auto;
+    border-radius: 7px;
+}
+
+.name_input,
+.surname_input{
+    height: 30px;
+    border: 2px solid green;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.name_input input,
+.surname_input input{
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+
+.hello{
+    cursor: pointer;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    border-radius: 7px;
+    border: 1px solid rgb(12, 82, 12);
+    background: rgb(82, 202, 82);
+}
+
+.show{
+    border: 1px solid rgb(97, 190, 15);
+    padding: 5px;
+    color: rgb(48, 65, 217);
+}

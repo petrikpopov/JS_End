@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            background: rgb(190, 194, 190);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .input_name,
+        .input_password{
+            margin-bottom: 15px;
+        }
+
+        .register{
+            width: 100%;
+        }
+
+        .valid{
+            border: 2px solid rgb(34, 226, 34);
+        }
+
+        .invalid{
+            border: 2px solid rgb(255, 0, 0);
+        }
+
+        .show-error{
+          display: none;
+        }
+
+        .invalid+.show-error{
+            display: block; 
+            color: red;
+        }
+    </style>
+</head>
+<body>
+   
+    <form>
+        <label>
+            <input class="input_name" type="text" name="user-name" placeholder="Name">
+            <span class="show-error"></span>
+        </label>
+        <br>
+        <label>
+            <input class="input_password" name="user-password" type="password" placeholder="password">
+            <span class="show-error"></span>
+        </label>
+        <br>
+        <button class="register">Register</button>
+    </form>
+   
+    <script src="code.js"></script>
+</body>
+</html>

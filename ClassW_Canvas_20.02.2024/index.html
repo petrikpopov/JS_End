@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        #figure{
+            border: 1px solid greenyellow;
+            float: right;
+        }
+
+        #rates-canvas{
+            border: 2px solid gold;
+            width: 100%;
+        }
+
+        .rate-button{
+            display: block;
+            margin: 5px 0 ;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">JS</a>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <h1>Canvas</h1>
+        <h2>Полотно , засоби рисувань</h2>
+        <div>
+            Основу для складних забражень дає елемент &lt;canvas> - полотно. З урахунку особливасті DOM - перезбирати весь документ після довільноі зміни - полотна надають покращені можливості створення динамічного контенту. 
+        </div>
+        <canvas id="figure"></canvas>
+        <div>
+            Лініі. Ідея рисування ліній полягає у комбінаціі двох операцій - переміщення "каретки" без сліду, та перемішення зі слідом. 
+            <button class="btn btn-flat indigo white-text" id="line1-btn">Нарисувати лінію</button>
+            <button class="btn btn-flat cyan white-text" id="line2-btn">Нарисувати лінію</button>
+            <button class="btn btn-flat purple white-text" id="lineCos-btn">Нарисувати COS(X)</button>
+            За замовченням розмір полотна 300 на 150 пікселів . При цьому важлило розуміти, що є розміри, а є роздатність,  кщо стилями змінити розмір полотна , то його роздільна здатність не змінится, при збільшенні проявиться піусельна структура.
+            <button class="btn btn-flat amber red-text" id="expand-button">збільшити розмір</button>
+            <button class="btn btn-flat light-green red-text" id="resolution-button">збільшити роздільність</button>
+        </div>
+        <div style="clear: both;"></div>
+        <hr/>
+        <div style="display: flex; align-items: baseline; justify-content: space-between;">
+            <h2>Курсы валют</h2>
+            <div>
+                <button class="btn btn-flat cyan white-text red-text" id="clear">Стереть</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3" id="assets-block">
+                <!-- <a href="#1" class="btn btn-flat red darken-2 rate-button">BTC</a> 
+                <a href="#1" class="btn btn-flat red darken-2 rate-button">SOL</a> 
+                <a href="#1" class="btn btn-flat red darken-2 rate-button">APT</a>  -->
+            </div>
+            <div class="col s9">
+                <canvas id="rates-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+    <h2>Кешування(збереження) данних</h2>
+    <ul>
+        <li>Зменшення трафіку</li>
+        <li>Автономніть(можливість роботи без інтернету)</li>
+        <li>Збереження налаштувань</li>
+    </ul>
+    <p>
+        У JS у браузері є ряд обмежень зокрема доступ да файловой системи.
+        Для задач збереження данных браузен надаэ декилька засобів доступних для перегляду у вкладці Аpplication інструменів розробника(консоль):
+    </p>
+    <ul>
+        <li>Local Storage - постійне сховише. Тримає значення що доступне усім вкладкам у яких відкрито дану сторінку. Відновлює значення після закриття вкладни і навідь браузера.</li>
+        <li>Session Storage - тимчасове сховище. Значення доступне лише данній вкладці. Закриття вкладки руйную значення. При оновлені сторінки - значення зберігаеється.(закрити , відкрити)</li>
+        <li>Index DB - для великих данних типу "Ключ-значення".</li>
+    </ul>
+    <div>
+        <div class="row">
+            <div class="col s1">
+                <span id="session-petiod"></span>
+            </div>
+            <div class="inline-fiel col s5">
+                <input id="session-input">
+            </div>
+            <div class="col s4">
+                <button class="btn" id="session-btn">Session Storage</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s1">
+                <span id="local-petiod"></span>
+            </div>
+            <div class="inline-fiel col s6">
+                <input id="local-input">
+            </div>
+            <div class="col s4">
+                <button class="btn" id="local-btn">Save in Local Storage</button>
+            </div>
+            <div class="col s2">
+                <button class="btn red darken-1" id="local-btn-delete">Delete</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s1">
+                <span id="session-period"></span>
+            </div>
+            <div class="input-field col s5">
+                <input id="session-input"/>
+                <input type="time" id="session-timer"/>
+            </div>
+            <div class="col s4">
+                <button class="btn" id="session-button">Save in Session Storage</button>
+            </div>
+            <div class="col s2">
+                <button class="btn pink white-text" id="session-delete">Delete Session</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="code.js"></script>
+</body>
+</html>

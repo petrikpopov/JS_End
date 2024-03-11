@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            display: inline-block;
+            height: 23px;
+            background-color: rgb(202, 202, 116);
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            border: 3px solid grey;
+        }
+        .div1 img,
+        .div b{
+            display: inline-block;
+            max-height: 23px;
+            vertical-align: middle;
+        }
+        .dnd-container{
+            float: right;
+            border: 3px solid red;
+            height: 90vh;
+            width: 50%;
+            position: relative;
+        }
+
+        .circle{
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+        }
+
+        .blue{
+            background-color: rgb(49, 131, 225);
+        }
+
+        .green{
+            background-color: rgb(24, 206, 24);
+        }
+
+        .red{
+            background-color: rgb(255, 234, 0);
+        }
+        
+        [data-type="dragdrop"]{
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dnd-target{
+            position: absolute;
+            bottom: 0;
+            width: 46%;
+            height: 25vh;
+        }
+
+        .dnd-positive{
+            left: 0;
+            background: red;
+        }
+
+        .dnd-negative{
+            right: 0;
+            background-color: black;
+        }
+
+        .square{
+            background-color: tomato;
+            height: 70px;
+            width: 120px;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dnd-container">
+        <h1>Drag'n Drop</h1>
+        <div class="blue circle" data-type="dragdrop"></div>
+        <div class="green circle" data-type="dragdrop"></div>
+        <div class="red circle" data-type="dragdrop"></div>
+        <div class="blue circle" data-type="dragdrop"></div>
+        <div class="green circle" data-type="dragdrop"></div>
+        <div class="red circle" data-type="dragdrop"></div>
+
+        <div class="dnd-target dnd-positive"></div>
+        <div class="dnd-target dnd-negative"></div>
+        <!-- <div class="square" draggable="true" ondragstart="event.dataTransfer.effectAllowed='move'"></div> -->
+ 
+ 
+        <!-- <div class="dnd-target dnd-positive" ondragover="event.dataTransfer.dropEffect='move'; event.preventDefault()"></div> -->
+
+       
+    </div>
+
+    <h1>Подіі в JS</h1>  
+    
+    <p>
+        Інформаційні подідомлення , які обробляются системою
+    </p>
+    <div>
+        <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">
+            перелік подій
+        </a>
+        <a href="https://www.w3.org/TR/DOM-Level-2-Events/events.html">
+            документація о подіях
+        </a>
+    </div>
+    
+    
+
+
+
+    <div>
+        Універсальнийм полем у подіх е target - через ноього можна визначати джерело подіі , його характеристики та абрибути.
+        <div class="div1" id="div1" data-info="info1-1">
+            Click me
+            target:<span id="target1"></span>
+        </div>
+       
+    </div>
+    <div>
+        Якщо склад елемента комбінований , не ліше текст наприклад стильовий тег &ltb>, то джерело подіі відрізняється у залежності від того , на яку складову частину показував курсор у момент подіі(слід клікнути а) у текст , б) поза текстом
+        <div class="div1" id="div1-2" data-info="info1-2">
+            <b>Click me</b>
+            target:<span id="target2"></span>
+        </div>
+       
+        <b>Bubbling</b> (сплиття подіі)  - процес іі передачі за ієрархією елементів (до батьківських вузлів)
+    </div>
+    <div>
+        Елементи , обробники яких аналізують target частично за все, генеруються автоматично(у коді з аналізу данних). Для передачі до елементу його даних використовується data- атрибут
+        <div class="div1" id="div1-3" data-info="info1-3">
+            <img src="Image [matchGroupPng].png" alt="">
+            <b><i>Click me</i></b>
+            target:<span id="target3"></span>
+        </div>
+        Для вирішення задачі вжівається метод closest - який є css селектором і шукає найбліжчій за ієрархіею. Елемент (включно з поточним який відпоаідає селектору)
+    </div>
+
+    <h1>Подіі клавіатури</h1>
+    <div>
+        <input type="text" id="input-1"> <span></span>
+    </div>
+    <script src="code.js"></script>
+</body>
+</html>

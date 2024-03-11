@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .modalWindow{
+            background-color: aquamarine;
+            padding: 20px;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 9999;
+        }
+
+        .modalWindow.open{
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modalWindow button{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button id="openModel" style="margin-top: 50px; padding: 10px;">Open modal</button>
+
+    <div class="modalWindow" id="myModel">
+        <div class="box">
+            <h2>Hello from ModalWindow</h2>
+            <button id="buttonClose">Close</button>
+        </div>
+    </div>
+
+    <script src="code-Task-2.js"></script>
+</body>
+</html>

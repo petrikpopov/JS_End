@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <h1>Формы. Валидация данных форм</h1>
+    <p>
+        Форми (зворотього звьязку) - засоби html які дозволяють вводитти данні користувачем та передавати іх на сервер сайту.
+
+    </p>
+    <p>
+        На сторінці може бути декілька форм , вони відокремлюются тегами &lt;form>&lt;/form>. якщо надсилаєтся одна форма , то елементи інших форм ігноруются. 
+        Єлементи що знаходятся у формі надсилаются за умов:
+    </p>
+    <ul>
+        <li>це елементи с певним набором тегов (input, button , select , textarea)</li>
+        <li>елемент має атрибут "NAme"</li>
+    </ul>
+    <p>
+        Данні форм можкть передаватись методами (GET / POST).
+        При методі POST данні вкладються у тіло запиту, при методі GET - в адресний рядок(URL).
+        В URL адресса та данні розділяются днаком питанням "?". Дані між собою розділяються знаком "&". 
+        form.html?user-name=ivan&user-password=21212
+    </p>
+    <p>
+        З точну зору JS надсилання форми - супроводжуэтся подиэю "submit" у документі.
+        Для впліву на процесс надсилання данних необхідно додати обробник цієі подіі. Але просте додавання обробника не зупинить надсилання форми, для його скасування необхідно додати команду  e.preventDefault();
+    </p>
+    <h2>Валідація</h2>
+    <p>
+        Валідація - процедура перевірки данних з певними ознаками(шаблонами) (email - мфє містити @ , телефон - складатись и цифр, ...)
+        
+    </p>
+    <!-- <form method="post">
+        <h3>Register</h3>
+        <label>NAme:<input class="invalid"  name="user-name" required/></label><br>
+        <br>
+        <label>Password:<input  name="user-password" type="password"/></label><br>
+        <br>
+        <button>Register</button>
+    </form> -->
+
+    <form method="post">
+        <h3>Register</h3>
+        <label>NAme:<input name="user-name" required/><span class="error-message"></span></label><br>
+        <br>
+        <label>Password:<input name="user-password" type="password"/></label><br>
+        <br>
+        <button>Register</button>
+    </form>
+
+    <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="tel" class="validate">
+              <label for="icon_telephone">Telephone</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="code.js"></script>
+</body>
+</html>

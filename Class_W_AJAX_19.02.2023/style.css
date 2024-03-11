@@ -1,0 +1,18 @@
+.rates-table{
+    border: 2px solid red;
+    border-collapse:  collapse;
+}
+
+.rates-table td,
+th{
+    border: 1px solid orange;
+    padding: 10px;
+}
+
+.rates-table tr:nth-child(odd){
+    background-color: rgb(85, 222, 103);
+}
+
+.rates-table th b{
+    cursor: pointer;
+}

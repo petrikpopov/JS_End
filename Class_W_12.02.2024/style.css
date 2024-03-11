@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.valid{
+    border: 2px solid rgb(27, 206, 27);
+}
+
+.invalid{
+    border: 2px solid red;
+    position: relative;
+}
+
+.error-message {
+    display: block;
+    position: absolute;
+    color: red;
+    font-size: small;
+    visibility: hidden;
+     
+}
+
+.invalid+.error-message {
+    visibility: visible;
+}
